@@ -1,0 +1,785 @@
+
+/* ===== General Styling ===== */
+/* ---------- VARIABLES & RESET ---------- */
+:root{
+  --bg:#f6fffaf0;           /* cream base */
+  --teal:#0ea5a0;           /* main teal */
+  --teal-dark:#0b7c79;
+  --ink:#12343b;
+  --muted:#6b7b7d;
+  --card:#ffffff;
+  --glass: rgba(255,255,255,0.7);
+  --container:1200px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+
+body{
+  font-family: "Inter", Poppins, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background: linear-gradient(180deg, var(--bg) 0%, #effffcf0 100%);
+  color:var(--dark);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header container */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ede7e7;
+  padding: 10px 80px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+}
+
+/* Logo section */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo img {
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+  border-radius: 8px;
+}
+
+.logo h1 {
+  color: rgb(21, 21, 21);
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+/* Navigation menu */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+nav ul li a {
+  color: rgb(20, 20, 20);
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #f36aff;
+  text-shadow: 0 0 8px #f36aff;
+}
+
+
+/* ---------- FLOATING MOLECULES ---------- */
+.float-wrap{position:fixed; inset:0; pointer-events:none; z-index:0}
+.molecule{
+  position:absolute; border-radius:50%;
+  background: linear-gradient(135deg, rgba(14,165,160,0.95), rgba(125,237,230,0.9));
+  box-shadow: 0 20px 50px rgba(14,165,160,0.12);
+  opacity:0.25;
+}
+.m1{width:220px;height:220px; left:-80px; top:60px; animation:drift1 18s linear infinite}
+.m2{width:140px;height:140px; right:-40px; top:220px; animation:drift2 14s linear infinite}
+.m3{width:90px;height:90px; left:10%; bottom:-30px; animation:drift3 22s linear infinite}
+
+@keyframes drift1{0%{transform:translateY(0) translateX(0)}50%{transform:translateY(-40px) translateX(30px)}100%{transform:translateY(0) translateX(0)}}
+@keyframes drift2{0%{transform:translateY(0) translateX(0)}50%{transform:translateY(35px) translateX(-20px)}100%{transform:translateY(0) translateX(0)}}
+@keyframes drift3{0%{transform:translateY(0)}50%{transform:translateY(-25px)}100%{transform:translateY(0)}}
+
+/* ---------- HEADER ---------- */
+.site-header{position:sticky; top:0; z-index:40; backdrop-filter:blur(6px); background:linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.6)); box-shadow:0 4px 14px rgba(18,52,59,0.03)}
+.header-inner{display:flex; align-items:center; gap:18px; padding:14px 0}
+.logo{font-weight:700; color:var(--teal-dark); font-size:20px; text-decoration:none}
+.nav{display:flex; gap:18px; margin-left:28px}
+.nav a{color:var(--ink); text-decoration:none; font-weight:600; padding:8px 6px; border-radius:6px; transition:all .22s}
+.nav a:hover{background:var(--glass); color:var(--teal)}
+.actions{margin-left:auto; display:flex; gap:12px; align-items:center}
+.search{font-size:18px; color:var(--ink); text-decoration:none}
+.btn{display:inline-block; padding:10px 14px; border-radius:28px; text-decoration:none; font-weight:700}
+.primary{background:linear-gradient(90deg,var(--teal),var(--teal-dark)); color:#fff; box-shadow:0 10px 30px rgba(11,114,133,0.08)}
+.ghost{background:transparent; color:var(--teal-dark); border:1px solid rgba(18,52,59,0.06)}
+
+:root {
+  --teal: #008080;
+  --dark: #0a2433;
+  --cream: #f7faf9;
+  --gray: #efeeee;
+  --white: #fff;
+}
+
+:root {
+  --teal: #008080;
+  --dark: #0a2433;
+  --cream: #f7faf9;
+  --gray: #555;
+  --white: #fff;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f5f9f7;
+  color: #222;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 40px 10px;
+  background: linear-gradient(135deg, #e7eded, #bce4dd);
+  color: white;
+}
+
+header h1 {
+  font-size: 32px;
+  letter-spacing: 1px;
+}
+
+header p {
+  margin-top: 8px;
+  font-size: 15px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #0b0b0b;
+  color: #090808;
+}
+
+/* ===== Header ===== */
+.header {
+  width: 100%;
+  background: #000;
+  color: #efeaea;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #8b3dff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 40px;
+}
+
+.logo h1 {
+  font-size: 24px;
+  color: #b366ff;
+  letter-spacing: 1px;
+}
+
+/* ===== Navigation ===== */
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: #b366ff;
+}
+
+/* ===== Hamburger Icon ===== */
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  color: #050505;
+  cursor: pointer;
+}
+
+#menu-toggle {
+  display: none;
+}
+/* 🌸 Label Style */
+label {
+  color: #0ea5a0;          /* Teal color */
+  font-weight: 600;        /* Make labels bold */
+  font-size: 16px;
+  display: block;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+/* 🌼 Hover effect (optional) */
+label:hover {
+  color: #ff69b4;          /* Soft pink glow when hovered */
+}
+
+
+/* ===== Mobile Menu ===== */
+@media (max-width: 900px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    border-top: 1px solid #b366ff;
+    border-bottom: 1px solid #b366ff;
+    border-radius: 0 0 15px 15px;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 0 15px #b366ff;
+  }
+
+  #menu-toggle:checked + .menu-icon + .nav {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 25px 0;
+  }
+
+  .nav a {
+    font-size: 18px;
+    display: block;
+  }
+}
+
+/* ===== Extra Small Devices ===== */
+@media (max-width: 480px) {
+  .header {
+    padding: 10px 20px;
+  }
+
+  .logo h1 {
+    font-size: 20px;
+  }
+
+  .menu-icon {
+    font-size: 26px;
+  }
+
+  .nav a {
+    font-size: 16px;
+  }
+}
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  color: #0e0d0d;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url("login.jpg") no-repeat center center/cover;  /* 🔹 Change this to your image name */
+  color: #0d0c0c;
+  overflow: hidden;
+}
+/* Header */
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 60px;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+}
+
+header .logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+}
+
+header .logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+  color: #00d4ff;
+}
+
+/* Container */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  padding: 150px 50px 60px;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Left Section */
+
+.login-left {
+  flex: 1;
+  min-width: 280px;
+  max-width: 450px;
+}
+
+.login-left h1 {
+  font-size: 3rem;
+  color: #4a4b4b;
+  margin-bottom: 20px;
+}
+
+.login-left p {
+  font-size: 1rem;
+  color: #090909;
+}
+
+.signup-text {
+  margin-top: 20px;
+}
+
+.signup-text a {
+  color: #00d4ff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Right Section */
+.login-right {
+  flex: 1;
+  min-width: 280px;
+  max-width: 450px;
+  background: rgba(118, 204, 204, 0.08);
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+.login-right form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: 600;
+}
+
+input {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #1a1919;
+  transition: 0.3s;
+}
+
+input::placeholder {
+  color: #020202;
+}
+
+input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid #00d4ff;
+}
+
+.login-btn {
+  margin-top: 15px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #00d4ff;
+  color: #111;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: #fff;
+  color: #00d4ff;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(251, 250, 250, 0.4);
+  margin-top: auto;
+  color: #000000;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .login-container {
+    flex-direction: column;
+    padding-top: 120px;
+    text-align: center;
+  }
+
+  .login-left, .login-right {
+    max-width: 100%;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 20px;
+  }
+
+  nav ul {
+    gap: 15px;
+  }
+}
+/* ===== General Styling ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #0b0b0b;
+  color: #fff;
+}
+
+/* ===== Header ===== */
+.header {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #8b3dff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 40px;
+}
+
+.logo h1 {
+  font-size: 24px;
+  color: #b366ff;
+  letter-spacing: 1px;
+}
+
+/* ===== Navigation ===== */
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: #b366ff;
+}
+
+/* ===== Hamburger Icon ===== */
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+/* ===== Mobile Menu ===== */
+@media (max-width: 900px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    border-top: 1px solid #b366ff;
+    border-bottom: 1px solid #b366ff;
+    border-radius: 0 0 15px 15px;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 0 15px #b366ff;
+  }
+
+  #menu-toggle:checked + .menu-icon + .nav {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 25px 0;
+  }
+
+  .nav a {
+    font-size: 18px;
+    display: block;
+  }
+}
+
+/* ===== Extra Small Devices ===== */
+@media (max-width: 480px) {
+  .header {
+    padding: 10px 20px;
+  }
+
+  .logo h1 {
+    font-size: 20px;
+  }
+
+  .menu-icon {
+    font-size: 26px;
+  }
+
+  .nav a {
+    font-size: 16px;
+  }
+}
+/* ===== General Styling ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #0b0b0b;
+  color: #fff;
+}
+
+/* ===== Header ===== */
+.header {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #8b3dff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 40px;
+}
+
+.logo h1 {
+  font-size: 24px;
+  color: #b366ff;
+  letter-spacing: 1px;
+}
+
+/* ===== Navigation ===== */
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: #b366ff;
+}
+
+/* ===== Hamburger Icon ===== */
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+/* ===== Mobile Menu ===== */
+@media (max-width: 900px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    border-top: 1px solid #b366ff;
+    border-bottom: 1px solid #b366ff;
+    border-radius: 0 0 15px 15px;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 0 15px #b366ff;
+  }
+
+  #menu-toggle:checked + .menu-icon + .nav {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 25px 0;
+  }
+
+  .nav a {
+    font-size: 18px;
+    display: block;
+  }
+}
+
+/* ===== Extra Small Devices ===== */
+@media (max-width: 480px) {
+  .header {
+    padding: 10px 20px;
+  }
+
+  .logo h1 {
+    font-size: 20px;
+  }
+
+  .menu-icon {
+    font-size: 26px;
+  }
+
+  .nav a {
+    font-size: 16px;
+  }
+}

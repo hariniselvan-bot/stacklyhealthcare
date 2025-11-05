@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Stackly HealthPortal — Trusted Medical News</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  
+
+  <!-- Floating decorative shapes -->
+  <div class="float-wrap" aria-hidden="true">
+    <span class="molecule m1"></span>
+    <span class="molecule m2"></span>
+    <span class="molecule m3"></span>
+  </div>
+<!-- ✅ HEADER START -->
+<header class="header">
+  <a href="index.html" class="logo">
+    <img src="logo.jpg" alt="STACKLY Logo">
+    <span>STACKLY <strong>Health</strong></span>
+  </a>
+
+  <nav class="navbar" id="navbar">
+    <a href="index.html">Portal 1</a>
+    <a href="home2.html">Portal 2</a>
+    <a href="docsavai.html">Available doctors</a>
+    <a href="healthyliving.html">healthy living</a>
+    <a href="condition.html">condition</a>
+    <a href="contact1.html">Contact</a>
+    <a href="login.html">Login</a>
+    <a href="docsavai.html" class="find-doctor-btn">Find a Doctor</a>
+  </nav>
+
+  <div class="menu-icon" id="menu-icon">&#9776;</div>
+</header>
+<!-- ✅ HEADER END -->
+
+<!-- ✅ CSS -->
+<style>
+  /* Base Header Styling */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eaf6f4;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+  }
+
+  .logo span {
+    font-size: 1.2rem;
+    color: #003b3b;
+    font-weight: bold;
+  }
+
+  .navbar {
+    display: flex;
+    gap: 20px;
+  }
+
+  .navbar a {
+    text-decoration: none;
+    color: #003b3b;
+    font-weight: 500;
+  }
+
+  .navbar a:hover {
+    color: #009999;
+  }
+
+  .find-doctor-btn {
+    background-color: #009999;
+    color: white !important;
+    padding: 6px 14px;
+    border-radius: 25px;
+  }
+
+  .find-doctor-btn:hover {
+    background-color: #007777;
+  }
+
+  .menu-icon {
+    font-size: 26px;
+    cursor: pointer;
+    display: none;
+    color: #003b3b;
+  }
+
+  /* ✅ Responsive: Mobile Menu */
+  @media (max-width: 900px) {
+    .navbar {
+      display: none;
+      flex-direction: column;
+      background-color: #009999;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      width: 220px;
+    }
+
+    .navbar.active {
+      display: flex;
+    }
+
+    .navbar a {
+      color: white;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .navbar a:hover {
+      background-color: #007777;
+    }
+
+    .menu-icon {
+      display: block;
+    }
+  }
+</style>
+
+<!-- ✅ WORKING JAVASCRIPT -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuIcon = document.getElementById("menu-icon");
+    const navbar = document.getElementById("navbar");
+
+    menuIcon.addEventListener("click", () => {
+      navbar.classList.toggle("active");
+    });
+  });
+</script>
+
+
+
+  <!-- HERO -->
+  <main>
+    <section id="top-stories" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <h1 class="hero-title">The Best And Worst Foods To Boost Your Energy</h1>
+          <p class="hero-excerpt">
+            Food choices could make a big difference in your energy levels.
+            Discover energizing foods that boost stamina and help you power through your day.
+          </p>
+
+          <div class="hero-links">
+            <a class="btn ghost" href="docsavai.html">Read Story</a>
+            <a class="card-mini" href="#news">
+              <img src="personal exeer.jpg" alt="small story">
+              <div class="mini-text">
+                <strong>Could Herbal Supplements Lower Your Blood Pressure?</strong>
+                <small>Updated today</small>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-image">
+            <img src="small story.jpg" alt="person exercising">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVING HEALTHY -->
+    <section id="living" class="section living">
+      <div class="container">
+        <div class="section-header">
+          <h2>Living Healthy</h2>
+          <a class="view-all" href="healthyliving.html">View All</a>
+        </div>
+
+        <div class="card-row">
+          <article class="tile"><img src="mental health.jpg"><h3>Mental Health</h3></article>
+          <article class="tile"><img src="diet.jpg"><h3>Diet & Weight Management</h3></article>
+          <article class="tile"><img src="healthy aging.jpg"><h3>Healthy Aging</h3></article>
+          <article class="tile"><img src="fitness.jpg"><h3>Fitness & Exercise</h3></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONDITIONS -->
+    <section id="conditions" class="section conditions">
+      <div class="container">
+        <div class="section-header">
+          <h2>Conditions</h2>
+          <a class="view-all" href="#">View All</a>
+        </div>
+        <div class="conditions-grid">
+          <a href="#" class="cond">Infection</a>
+          <a href="#" class="cond">Fever</a>
+          <a href="#" class="cond">Cancer</a>
+          <a href="#" class="cond">Diabetes</a>
+          <a href="#" class="cond">Heart Disease</a>
+          <a href="#" class="cond">Asthma</a>
+          <a href="#" class="cond">Arthritis</a>
+          <a href="#" class="cond">Eye Problems</a>
+          <a href="#" class="cond">Liver Disease</a>
+          <a href="#" class="cond">Kidney Problems</a>
+          <a href="#" class="cond">Blood Pressure</a>
+          <a href="#" class="cond">Skin Infection</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPECIAL SECTION -->
+    <section class="special-section">
+      <h3>SPECIAL SECTION</h3>
+      <div class="cards">
+        <div class="card">
+          <img src="cold sore" alt="Cold Sores">
+          <div class="text">
+            <h4>Treat And Prevent Cold Sores</h4>
+            <p>Learn about cold sores symptoms, plus treatment options and tips for prevention.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="exercise" alt="Exercise Pains">
+          <div class="text">
+            <h4>Common Pains From Exercise</h4>
+            <p>Soothes sore muscles and prevent injury. Learn how to manage exercise pain effectively.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="foot pain" alt="Foot Pain">
+          <div class="text">
+            <h4>Foot Pain And How To Find Relief</h4>
+            <p>Learn about causes of foot pain and steps you can take to get moving comfortably again.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRENDING TOPICS -->
+    <section class="trending-topics">
+      <h3>TRENDING TOPICS</h3>
+      <div class="tags">
+        <span>Adult Vaccines</span><span>Back Pain</span><span>Digestive Problems</span>
+        <span>Hemorrhoids</span><span>Hypertension</span><span>Nutrition</span>
+        <span>Skin Problems</span><span>Vitamin Supplements</span>
+      </div>
+    </section>
+
+    <!-- FEATURED STORIES -->
+    <section class="featured-stories">
+      <h3>FEATURED STORIES</h3>
+      <div class="cards">
+        <div class="card"><img src="theropy"><div class="text"><h4>Perimenopause And Hormone Therapy</h4><p>One doctor shares her personal journey through the “chaos” of perimenopause symptoms.</p></div></div>
+        <div class="card"><img src="apple"><div class="text"><h4>Apple Cider Vinegar And Liver Health</h4><p>Apple cider vinegar supports liver function — here's what you need to know.</p></div></div>
+        <div class="card"><img src="riskly.webp"><div class="text"><h4>Why Delaying Cancer Screenings Is Risky</h4><p>Doctors share why cancer screening gets skipped — and how to protect your health.</p></div></div>
+      </div>
+    </section>
+  </main>
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stackly Footer with Map</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #000;
+      color: #fcf4f4;
+    }
+.footer {
+      background: url('footer.jpg') no-repeat center bottom;
+      padding: 40px 10% 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .footer-column {
+      flex: 1 1 200px;
+      margin: 20px;
+    }
+
+    .footer-column h3 {
+      border-bottom: 2px solid #00ffff;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li {
+      margin: 10px 0;
+    }
+
+    .footer-column ul li a {
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    .footer-column ul li a:hover {
+      color: #fff;
+    }
+
+    .footer-contact p {
+      margin: 6px 0;
+    }
+
+    .map {
+      flex: 1 1 300px;
+      margin: 20px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 200px;
+      border: none;
+      border-radius: 6px;
+    }
+
+    .social-icons {
+      text-align: center;
+      padding: 20px 0 10px;
+    }
+
+    .social-icons a {
+      color: #fff;
+      margin: 0 10px;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    .copyright {
+      text-align: center;
+      color: #aaa;
+      font-size: 14px;
+      padding-bottom: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .footer {
+        flex-direction: column;
+        padding: 30px 5%;
+      }
+
+      .map {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+ <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="logo.jpg" alt="Stackly Logo">
+        <h3>STACKLY</h3>
+            </div>
+        
+
+      <div class="footer-links">
+        <h4>check us</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="healthyliving.html">living healthy</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">login</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Get In Touch</h4>
+        <p>MMR COMPLEX, Salem, Tamil Nadu 636008</p>
+        <p>+91 70107 92745</p>
+        <p>info@thestackly.com</p>
+      </div>
+      <!-- Social Icons -->
+  <div class="social-icons">
+    <a href="404.html"><i class="fab fa-facebook-f"></i></a>
+    <a href="404.html"><i class="fab fa-twitter"></i></a>
+    <a href="404.html"><i class="fab fa-linkedin-in"></i></a>
+    <a href="404.html"><i class="fab fa-instagram"></i></a>
+  </div>
+      <iframe
+          src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
+          width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+    </div>
+    <div class="copyright">
+      <p>© 2025 Stackly | All Rights Reserved</p>
+    </div>
+
+  </footer>

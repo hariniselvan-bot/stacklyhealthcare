@@ -1,0 +1,273 @@
+/* ---------- VARIABLES & RESET ---------- */
+:root{
+  --bg:#f6fffaf0;           /* cream base */
+  --teal:#0ea5a0;           /* main teal */
+  --teal-dark:#0b7c79;
+  --ink:#12343b;
+  --muted:#6b7b7d;
+  --card:#ffffff;
+  --glass: rgba(255,255,255,0.7);
+  --container:1200px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+
+body{
+  font-family: "Inter", Poppins, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background: linear-gradient(180deg, var(--bg) 0%, #effffcf0 100%);
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+}
+/* Header container */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ece9e9;
+  padding: 10px 80px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+}
+
+/* Logo section */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo img {
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+  border-radius: 8px;
+}
+
+.logo h1 {
+  color: rgb(1, 1, 1);
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+/* Navigation menu */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #f36aff;
+  text-shadow: 0 0 8px #f36aff;
+}
+
+
+/* ---------- LAYOUT CONTAINER ---------- */
+.container{
+  width:94%;
+  max-width:var(--container);
+  margin:0 auto;
+}
+
+/* ---------- FLOATING MOLECULES (loop animation) ---------- */
+.float-wrap{position:fixed; inset:0; pointer-events:none; z-index:0}
+.molecule{
+  position:absolute; border-radius:50%;
+  background: linear-gradient(135deg, rgba(14,165,160,0.95), rgba(125,237,230,0.9));
+  box-shadow: 0 20px 50px rgba(14,165,160,0.12);
+  opacity:0.25;
+}
+.m1{width:220px;height:220px; left:-80px; top:60px; animation:drift1 18s linear infinite}
+.m2{width:140px;height:140px; right:-40px; top:220px; animation:drift2 14s linear infinite}
+.m3{width:90px;height:90px; left:10%; bottom:-30px; animation:drift3 22s linear infinite}
+
+@keyframes drift1{0%{transform:translateY(0) translateX(0)}50%{transform:translateY(-40px) translateX(30px)}100%{transform:translateY(0) translateX(0)}}
+@keyframes drift2{0%{transform:translateY(0) translateX(0)}50%{transform:translateY(35px) translateX(-20px)}100%{transform:translateY(0) translateX(0)}}
+@keyframes drift3{0%{transform:translateY(0)}50%{transform:translateY(-25px)}100%{transform:translateY(0)}}
+
+/* ---------- HEADER ---------- */
+.site-header{position:sticky; top:0; z-index:40; backdrop-filter:blur(6px); background:linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.6)); box-shadow:0 4px 14px rgba(18,52,59,0.03)}
+.header-inner{display:flex; align-items:center; gap:18px; padding:14px 0}
+.logo{font-weight:700; color:var(--teal-dark); font-size:20px; text-decoration:none}
+.nav{display:flex; gap:18px; margin-left:28px}
+.nav a{color:var(--ink); text-decoration:none; font-weight:600; padding:8px 6px; border-radius:6px; transition:all .22s}
+.nav a:hover{background:var(--glass); color:var(--teal)}
+.actions{margin-left:auto; display:flex; gap:12px; align-items:center}
+.search{font-size:18px; color:var(--ink); text-decoration:none}
+.btn{display:inline-block; padding:10px 14px; border-radius:28px; text-decoration:none; font-weight:700}
+.primary{background:linear-gradient(90deg,var(--teal),var(--teal-dark)); color:#fff; box-shadow:0 10px 30px rgba(11,114,133,0.08)}
+.ghost{background:transparent; color:var(--teal-dark); border:1px solid rgba(18,52,59,0.06)}
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  padding: 60px 10%;
+}
+
+.box {
+  background: #e7f8f5;
+  border-radius: 25px;
+  padding: 40px 20px;
+  text-align: center;
+  transition: all 0.5s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  animation: float 6s ease-in-out infinite;
+}
+
+.box:nth-child(even) {
+  animation-delay: 3s;
+}
+
+.box:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(10, 163, 154, 0.3);
+  background: #fdfcf8;
+}
+
+.box img {
+  width: 80px;
+  margin-bottom: 20px;
+  transition: transform 0.4s ease;
+}
+
+.box:hover img {
+  transform: rotate(10deg) scale(1.1);
+}
+
+.box h2 {
+  color: #0aa39a;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.box p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+footer {
+  background: #120013;
+  color: white;
+  padding: 60px 80px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-logo img {
+  width: 50px;
+  border-radius: 10px;
+}
+
+.footer-logo p {
+  margin-top: 10px;
+  color: #aaa;
+}
+
+.footer-links ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.footer-links ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-links ul li a:hover {
+  color: #ff4bff;
+}
+
+.footer-contact p {
+  color: #aaa;
+  margin-top: 8px;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 40px;
+  border-top: 1px solid #333;
+  padding-top: 20px;
+  color: #777;
+}
+/* 🌙 Responsive Navbar Design */
+@media (max-width: 900px) 
+{
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    position: relative;
+  }
+
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+  .grid {
+    gap: 20px;
+    padding: 40px 5%;
+  }
+}
+}

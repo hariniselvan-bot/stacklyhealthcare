@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Healthy Living Pharmacy</title>
+  <link rel="stylesheet" href="home2.css">
+</head>
+<!-- ✅ HEADER START -->
+<header class="header">
+  <a href="index.html" class="logo">
+    <img src="logo.jpg" alt="STACKLY Logo">
+    <span>STACKLY <strong>Health</strong></span>
+  </a>
+
+  <nav class="navbar" id="navbar">
+    <a href="index.html">Portal 1</a>
+    <a href="home2.html">Portal 2</a>
+    <a href="pet.html">Pet Pills</a>
+    <a href="drugs.html">Drugs & Supplements</a>
+    <a href="bmi.html">BMI Checker</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+    <a href="cart.html">Cart</a>
+    <a href="docsavai.html" class="find-doctor-btn">Find a Doctor</a>
+  </nav>
+
+  <div class="menu-icon" id="menu-icon">&#9776;</div>
+</header>
+<!-- ✅ HEADER END -->
+
+<!-- ✅ CSS -->
+<style>
+  /* Base Header Styling */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eaf6f4;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+  }
+
+  .logo span {
+    font-size: 1.2rem;
+    color: #003b3b;
+    font-weight: bold;
+  }
+
+  .navbar {
+    display: flex;
+    gap: 20px;
+  }
+
+  .navbar a {
+    text-decoration: none;
+    color: #003b3b;
+    font-weight: 500;
+  }
+
+  .navbar a:hover {
+    color: #009999;
+  }
+
+  .find-doctor-btn {
+    background-color: #009999;
+    color: white !important;
+    padding: 6px 14px;
+    border-radius: 25px;
+  }
+
+  .find-doctor-btn:hover {
+    background-color: #007777;
+  }
+
+  .menu-icon {
+    font-size: 26px;
+    cursor: pointer;
+    display: none;
+    color: #003b3b;
+  }
+
+  /* ✅ Responsive: Mobile Menu */
+  @media (max-width: 900px) {
+    .navbar {
+      display: none;
+      flex-direction: column;
+      background-color: #009999;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      width: 220px;
+    }
+
+    .navbar.active {
+      display: flex;
+    }
+
+    .navbar a {
+      color: white;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .navbar a:hover {
+      background-color: #007777;
+    }
+
+    .menu-icon {
+      display: block;
+    }
+  }
+</style>
+
+<!-- ✅ WORKING JAVASCRIPT -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuIcon = document.getElementById("menu-icon");
+    const navbar = document.getElementById("navbar");
+
+    menuIcon.addEventListener("click", () => {
+      navbar.classList.toggle("active");
+    });
+  });
+</script>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="pharmacy.jpg" alt="Pharmacy Banner" class="hero-img">
+    <div class="hero-content">
+      <h2>Healthy Tablets and Medicine</h2>
+      <p>Your trusted source for quality health and wellness products.</p>
+      <div class="search-bar">
+        <select>
+          <option>All Categories</option>
+          <option>Medicine</option>
+          <option>Fitness</option>
+          <option>Diagnostics</option>
+        </select>
+        <input type="text" placeholder="Search for something...">
+        <a class="btn primary" href="drugs.html">medicines</a>
+
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORY INFO -->
+  <section class="info-section">
+    <div class="container info-grid">
+      <div class="info-box">
+        <img src="medicine.jpg" alt="Medicine" />
+        <h3>💊 Medicine</h3>
+        <p>Get all your medications in one place.</p>
+      </div>
+      <div class="info-box">
+        <img src="wellness.jpg" alt="Wellness" />
+        <h3>🌿 Wellness</h3>
+        <p>Natural and organic supplements for healthy living.</p>
+      </div>
+      <div class="info-box">
+        <img src="Diagnostic.jpg" alt="Diagnostic" />
+        <h3>🧪 Diagnostic</h3>
+        <p>Tools and kits for monitoring your health.</p>
+      </div>
+      <div class="info-box">
+        <img src="Health Corner.jpg" alt="Health Corner" />
+        <h3>❤️ Health Corner</h3>
+        <p>Expert health tips and wellness advice.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMOTIONAL BANNERS -->
+  <section class="promo-section">
+    <div class="container promo-grid">
+      <div class="promo-box blue">
+        <img src="Medication.jpg" alt="Medication" />
+        <h4>Medication at One Place</h4>
+        <p>Best deals on essential medicines.</p>
+      </div>
+      <div class="promo-box pink">
+        <img src="Naturally Good.jpg" alt="Naturally Good" />
+        <h4>Naturally Good</h4>
+        <p>Save up to 25% on organic health products.</p>
+      </div>
+      <div class="promo-box green">
+        <img src="Medlife.jpg" alt="Medlife" />
+        <h4>Medlife Products</h4>
+        <p>Upto 30% off on top brands.</p>
+      </div>
+      <div class="promo-box yellow">
+        <img src="Popular Medicines.jpg" alt="Popular Medicines" />
+        <h4>Popular Medicines</h4>
+        <p>Trusted by doctors and pharmacists.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- POPULAR CATEGORIES -->
+  <section class="categories">
+    <div class="container">
+      <h2>Popular Categories</h2>
+      <div class="category-grid">
+        <div class="cat"><img src="OTC Drugs.jpg" alt="OTC Drugs"><p></p></div>
+        <div class="cat"><img src="Ayush.jpg" alt="Ayush"><p></p></div>
+        <div class="cat"><img src="Covid Essentials.jpg" alt="Covid Essentials"><p></p></div>
+        <div class="cat"><img src="Devices.jpg" alt="Devices"><p></p></div>
+        <div class="cat"><img src="Diabetes.jpg" alt="Diabetes"><p></p></div>
+        <div class="cat"><img src="eye.jpg" alt="Eyewear"><p></p></div>
+        <div class="cat"><img src="fit.jpg" alt="Fitness"><p></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products">
+    <div class="container">
+      <h2>Our Daily Products</h2>
+      <div class="product-grid">
+        <div class="product">
+          <img src="Waterpik WP-100 Dental Care.jpg" alt="Product 1">
+          <h4>Waterpik WP-100 Dental Care</h4>
+          <p>82.00</p>
+          <a href="#" class="add">Add to Cart</a>
+        </div>
+        <div class="product">
+          <img src="Organik Salmon Collagen.jpg" alt="Product 2">
+          <h4>Organik Salmon Collagen</h4>
+          <p>74.00</p>
+          <a href="#" class="add">Add to Cart</a>
+        </div>
+        <div class="product">
+          <img src="Dental Irigator.jpg" alt="Product 3">
+          <h4>Dental Irigator</h4>
+          <p>165.45</p>
+          <a href="#" class="add">Add to Cart</a>
+        </div>
+        <div class="product">
+          <img src="Siro Lorastad SP.jpg" alt="Product 4">
+          <h4>Siro Lorastad SP</h4>
+          <p>140.89</p>
+          <a href="#" class="add">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stackly Footer with Map</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #000;
+      color: #f8eeee;
+    }
+    <footer>
+    <div class="footer-overlay"></div>
+    <script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+  
+</script>
+
+
+    .footer {
+      background: url('footer.jpg') no-repeat center bottom;
+      padding: 40px 10% 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .footer-column {
+      flex: 1 1 200px;
+      margin: 20px;
+    }
+
+    .footer-column h3 {
+      border-bottom: 2px solid #00ffff;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li {
+      margin: 10px 0;
+    }
+
+    .footer-column ul li a {
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    .footer-column ul li a:hover {
+      color: #fff;
+    }
+
+    .footer-contact p {
+      margin: 6px 0;
+    }
+
+    .map {
+      flex: 1 1 300px;
+      margin: 20px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 200px;
+      border: none;
+      border-radius: 6px;
+    }
+
+    .social-icons {
+      text-align: center;
+      padding: 20px 0 10px;
+    }
+
+    .social-icons a {
+      color: #fff;
+      margin: 0 10px;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    .copyright {
+      text-align: center;
+      color: #aaa;
+      font-size: 14px;
+      padding-bottom: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .footer {
+        flex-direction: column;
+        padding: 30px 5%;
+      }
+
+      .map {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+ <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="logo.jpg" alt="Stackly Logo">
+        <h3>STACKLY</h3>
+            </div>
+        
+
+      <div class="footer-links">
+        <h4>check us</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="healthyliving.html">living healthy</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">login</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Get In Touch</h4>
+        <p>MMR COMPLEX, Salem, Tamil Nadu 636008</p>
+        <p>+91 70107 92745</p>
+        <p>info@thestackly.com</p>
+      </div>
+      <!-- Social Icons -->
+  <div class="social-icons">
+    <a href="404.html"><i class="fab fa-facebook-f"></i></a>
+    <a href="404.html"><i class="fab fa-twitter"></i></a>
+    <a href="404.html"><i class="fab fa-linkedin-in"></i></a>
+    <a href="404.html"><i class="fab fa-instagram"></i></a>
+  </div>
+      <iframe
+          src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
+          width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+    </div>
+    <div class="copyright">
+      <p>© 2025 Stackly | All Rights Reserved</p>
+    </div>
+
+  </footer>

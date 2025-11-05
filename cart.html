@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Cart 🛒</title>
+  <style>
+    
+    /* 🌸 Reset & Base */
+    /* ---------- VARIABLES & RESET ---------- */
+:root{
+  --bg:#f6fffaf0;           /* cream base */
+  --teal:#0ea5a0;           /* main teal */
+  --teal-dark:#0b7c79;
+  --ink:#12343b;
+  --muted:#6b7b7d;
+  --card:#ffffff;
+  --glass: rgba(255,255,255,0.7);
+  --container:1200px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+
+body{
+  font-family: "Inter", Poppins, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background: linear-gradient(180deg, var(--bg) 0%, #effffcf0 100%);
+  color:var(--dark);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header container */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ede7e7;
+  padding: 10px 80px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+}
+
+/* Logo section */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo img {
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+  border-radius: 8px;
+}
+
+.logo h1 {
+  color: rgb(239, 239, 239);
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+/* Navigation menu */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+nav ul li a {
+  color: rgb(247, 242, 242);
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #f36aff;
+  text-shadow: 0 0 8px #f36aff;
+}
+
+
+/* ---------- FLOATING MOLECULES ---------- */
+.float-wrap{position:fixed; inset:0; pointer-events:none; z-index:0}
+.molecule{
+  position:absolute; border-radius:50%;
+  background: linear-gradient(135deg, rgba(14,165,160,0.95), rgba(125,237,230,0.9));
+  box-shadow: 0 20px 50px rgba(14,165,160,0.12);
+  opacity:0.25;
+}
+.m1{width:220px;height:220px; left:-80px; top:60px; animation:drift1 18s linear infinite}
+.m2{width:140px;height:140px; right:-40px; top:220px; animation:drift2 14s linear infinite}
+.m3{width:90px;height:90px; left:10%; bottom:-30px; animation:drift3 22s linear infinite}
+
+@keyframes drift1{0%{transform:translateY(0) translateX(0)}50%{transform:translateY(-40px) translateX(30px)}100%{transform:translateY(0) translateX(0)}}
+@keyframes drift2{0%{transform:translateY(0) translateX(0)}50%{transform:translateY(35px) translateX(-20px)}100%{transform:translateY(0) translateX(0)}}
+@keyframes drift3{0%{transform:translateY(0)}50%{transform:translateY(-25px)}100%{transform:translateY(0)}}
+
+/* ---------- HEADER ---------- */
+.site-header{position:sticky; top:0; z-index:40; backdrop-filter:blur(6px); background:linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.6)); box-shadow:0 4px 14px rgba(18,52,59,0.03)}
+.header-inner{display:flex; align-items:center; gap:18px; padding:14px 0}
+.logo{font-weight:700; color:var(--teal-dark); font-size:20px; text-decoration:none}
+.nav{display:flex; gap:18px; margin-left:28px}
+.nav a{color:var(--ink); text-decoration:none; font-weight:600; padding:8px 6px; border-radius:6px; transition:all .22s}
+.nav a:hover{background:var(--glass); color:var(--teal)}
+.actions{margin-left:auto; display:flex; gap:12px; align-items:center}
+.search{font-size:18px; color:var(--ink); text-decoration:none}
+.btn{display:inline-block; padding:10px 14px; border-radius:28px; text-decoration:none; font-weight:700}
+.primary{background:linear-gradient(90deg,var(--teal),var(--teal-dark)); color:#fff; box-shadow:0 10px 30px rgba(11,114,133,0.08)}
+.ghost{background:transparent; color:var(--teal-dark); border:1px solid rgba(18,52,59,0.06)}
+
+:root {
+  --teal: #008080;
+  --dark: #0a2433;
+  --cream: #f7faf9;
+  --gray: #efeeee;
+  --white: #fff;
+}
+
+:root {
+  --teal: #008080;
+  --dark: #0a2433;
+  --cream: #f7faf9;
+  --gray: #555;
+  --white: #fff;
+}
+
+body {
+  background: linear-gradient(135deg, #0a3938, #0b7c79);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #fdf6ff, #e7fff8);
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* 🌼 Header */
+    header {
+      background: #0ea5a0;
+      color: #fff;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 24px;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      margin: 0 12px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #fce5ff;
+      text-shadow: 0 0 8px #fff;
+    }
+
+    /* 🛍️ Cart Section */
+    .cart-container {
+      flex: 1;
+      max-width: 900px;
+      min-height: 450px; /* 💖 Keeps the section big even when empty */
+      margin: 60px auto;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      animation: fadeIn 0.8s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+    .cart-container h2 {
+      text-align: center;
+      color: #0ea5a0;
+      margin-bottom: 25px;
+      text-shadow: 0 0 8px #a5fff1;
+    }
+
+    #cart-items {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      flex-grow: 1;
+      justify-content: center;
+    }
+
+    .empty-message {
+      text-align: center;
+      font-size: 18px;
+      color: #777;
+      padding: 60px 0;
+    }
+
+    /* 🛒 Cart Container */
+.cart-container {
+  flex: 1;
+  max-width: 900px;
+  min-height: 500px;
+  margin: 80px auto;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  padding: 40px 40px 120px;  /* 👈 extra bottom space */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.8s ease-in-out;
+  overflow-y: auto;          /* 👈 allows scrolling if many items */
+}
+
+/* 🩵 Footer */
+footer {
+  background: #0ea5a0;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  margin-top: auto;         /* 👈 ensures footer sits below content */
+  position: relative;
+  z-index: 1;
+}
+
+    .cart-item {
+      background: #e9fff8;
+      padding: 15px;
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: 0.3s;
+    }
+
+    .cart-item:hover {
+      transform: scale(1.02);
+    }
+
+    .cart-item button {
+      background: #0ea5a0;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .cart-item button:hover {
+      background: #0b7c79;
+    }
+
+    /* 💸 Buy Button */
+    .buy-btn {
+      display: block;
+      margin: 30px auto 0;
+      padding: 12px 30px;
+      background: #0ea5a0;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: 0.3s;
+      box-shadow: 0 0 12px #9afff0;
+    }
+
+    .buy-btn:hover {
+      background: #0b7c79;
+      box-shadow: 0 0 20px #74ffe5;
+    }
+
+    /* 🌸 Footer */
+    footer {
+      background: #0ea5a0;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* ✨ Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 📱 Responsive */
+    @media (max-width: 768px) {
+      .cart-container {
+        margin: 30px 15px;
+        padding: 25px;
+      }
+
+      header h1 {
+        font-size: 20px;
+      }
+
+      nav a {
+        margin: 0 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<!-- ✅ HEADER START -->
+<header class="header">
+  <a href="index.html" class="logo">
+    <img src="logo.jpg" alt="STACKLY Logo">
+    <span>STACKLY <strong>Health</strong></span>
+  </a>
+
+  <nav class="navbar" id="navbar">
+    <a href="index.html">Portal 1</a>
+    <a href="home2.html">Portal 2</a>
+    <a href="pet.html">Pet Pills</a>
+    <a href="drugs.html">Drugs & Supplements</a>
+    <a href="bmi.html">BMI Checker</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+    <a href="cart.html">Cart</a>
+    <a href="docsavai.html" class="find-doctor-btn">Find a Doctor</a>
+  </nav>
+
+  <div class="menu-icon" id="menu-icon">&#9776;</div>
+</header>
+<!-- ✅ HEADER END -->
+
+<!-- ✅ CSS -->
+<style>
+  /* Base Header Styling */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eaf6f4;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+  }
+
+  .logo span {
+    font-size: 1.2rem;
+    color: #003b3b;
+    font-weight: bold;
+  }
+
+  .navbar {
+    display: flex;
+    gap: 20px;
+  }
+
+  .navbar a {
+    text-decoration: none;
+    color: #003b3b;
+    font-weight: 500;
+  }
+
+  .navbar a:hover {
+    color: #009999;
+  }
+
+  .find-doctor-btn {
+    background-color: #009999;
+    color: white !important;
+    padding: 6px 14px;
+    border-radius: 25px;
+  }
+
+  .find-doctor-btn:hover {
+    background-color: #007777;
+  }
+
+  .menu-icon {
+    font-size: 26px;
+    cursor: pointer;
+    display: none;
+    color: #003b3b;
+  }
+
+  /* ✅ Responsive: Mobile Menu */
+  @media (max-width: 900px) {
+    .navbar {
+      display: none;
+      flex-direction: column;
+      background-color: #009999;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      width: 220px;
+    }
+
+    .navbar.active {
+      display: flex;
+    }
+
+    .navbar a {
+      color: white;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .navbar a:hover {
+      background-color: #007777;
+    }
+
+    .menu-icon {
+      display: block;
+    }
+  }
+</style>
+
+<!-- ✅ WORKING JAVASCRIPT -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuIcon = document.getElementById("menu-icon");
+    const navbar = document.getElementById("navbar");
+
+    menuIcon.addEventListener("click", () => {
+      navbar.classList.toggle("active");
+    });
+  });
+</script>
+  <!-- 🛒 Cart Section -->
+  <div class="cart-container">
+    <h2>Your Shopping Cart</h2>
+    <div id="cart-items"></div>
+    <button class="buy-btn" onclick="buyNow()">Buy Now</button>
+  </div>
+
+  <!-- 🌸 Footer -->
+  <footer>
+    © 2025 Stackly Health Care
+  </footer>
+
+  <script>
+    // Load cart items
+    document.addEventListener("DOMContentLoaded", () => {
+      const cartContainer = document.getElementById("cart-items");
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      if (cart.length === 0) {
+        cartContainer.innerHTML = `
+          <p class="empty-message">Your cart is empty 💖 <br><br>
+          <a href='pet.html' style='color:#0ea5a0; text-decoration:none; font-weight:600;'>Go shop now</a></p>`;
+        return;
+      }
+
+      cartContainer.innerHTML = cart.map((item, index) => `
+        <div class="cart-item">
+          <p>${item.name} - ₹${item.price}</p>
+          <button onclick="removeItem(${index})">Delete</button>
+        </div>
+      `).join("");
+    });
+
+    // Remove item
+    function removeItem(index) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      location.reload();
+    }
+
+    // Buy button -> goes to login
+    function buyNow() {
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>

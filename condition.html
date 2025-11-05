@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Stackly HealthPortal  — Trusted Medical News</title>
+  <link rel="stylesheet" href="condition.css" />
+</head>
+<body>
+
+<!-- ✅ HEADER START -->
+<header class="header">
+  <a href="index.html" class="logo">
+    <img src="logo.jpg" alt="STACKLY Logo">
+    <span>STACKLY <strong>Health</strong></span>
+  </a>
+
+  <nav class="navbar" id="navbar">
+    <a href="index.html">Portal 1</a>
+    <a href="home2.html">Portal 2</a>
+    <a href="docsavai.html">Available doctors</a>
+    <a href="healthyliving.html">healthy living</a>
+    <a href="condition.html">condition</a>
+    <a href="contact1.html">Contact</a>
+    <a href="login.html">Login</a>
+    <a href="docsavai.html" class="find-doctor-btn">Find a Doctor</a>
+  </nav>
+
+  <div class="menu-icon" id="menu-icon">&#9776;</div>
+</header>
+<!-- ✅ HEADER END -->
+
+<!-- ✅ CSS -->
+<style>
+  /* Base Header Styling */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eaf6f4;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+  }
+
+  .logo span {
+    font-size: 1.2rem;
+    color: #003b3b;
+    font-weight: bold;
+  }
+
+  .navbar {
+    display: flex;
+    gap: 20px;
+  }
+
+  .navbar a {
+    text-decoration: none;
+    color: #003b3b;
+    font-weight: 500;
+  }
+
+  .navbar a:hover {
+    color: #009999;
+  }
+
+  .find-doctor-btn {
+    background-color: #009999;
+    color: white !important;
+    padding: 6px 14px;
+    border-radius: 25px;
+  }
+
+  .find-doctor-btn:hover {
+    background-color: #007777;
+  }
+
+  .menu-icon {
+    font-size: 26px;
+    cursor: pointer;
+    display: none;
+    color: #003b3b;
+  }
+
+  /* ✅ Responsive: Mobile Menu */
+  @media (max-width: 900px) {
+    .navbar {
+      display: none;
+      flex-direction: column;
+      background-color: #009999;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      width: 220px;
+    }
+
+    .navbar.active {
+      display: flex;
+    }
+
+    .navbar a {
+      color: white;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .navbar a:hover {
+      background-color: #007777;
+    }
+
+    .menu-icon {
+      display: block;
+    }
+  }
+</style>
+
+<!-- ✅ WORKING JAVASCRIPT -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuIcon = document.getElementById("menu-icon");
+    const navbar = document.getElementById("navbar");
+
+    menuIcon.addEventListener("click", () => {
+      navbar.classList.toggle("active");
+    });
+  });
+</script>
+
+  <section class="conditions">
+    <!-- 1 to 12 (previous ones) -->
+    <div class="condition">
+      <img src="infection.jpg" alt="Infection">
+      <h2>Infection</h2>
+      <p>Caused by bacteria, viruses, or fungi. Prevention includes hygiene and vaccination.</p>
+    </div>
+
+    <div class="condition">
+      <img src="fever.jpg" alt="Fever">
+      <h2>Fever</h2>
+      <p>A temporary rise in body temperature. Stay hydrated and rest for recovery.</p>
+    </div>
+
+    <div class="condition">
+      <img src="cancer.jpg" alt="Cancer">
+      <h2>Cancer</h2>
+      <p>Uncontrolled cell growth. Early detection improves treatment outcomes.</p>
+    </div>
+
+    <div class="condition">
+      <img src="diabities.jpg" alt="Diabetes">
+      <h2>Diabetes</h2>
+      <p>Chronic condition affecting insulin production. Manage through diet and exercise.</p>
+    </div>
+
+    <div class="condition">
+      <img src="heart.jpg" alt="Heart Disease">
+      <h2>Heart Disease</h2>
+      <p>Conditions affecting the heart. Maintain a balanced diet and stay active.</p>
+    </div>
+
+    <div class="condition">
+      <img src="mentalhealth.jpg" alt="Mental Health">
+      <h2>Mental Health</h2>
+      <p>Emotional and psychological well-being. Practice mindfulness and seek support.</p>
+    </div>
+
+    <div class="condition">
+      <img src="asthma.jpg" alt="Asthma">
+      <h2>Asthma</h2>
+      <p>Chronic lung condition. Avoid triggers and use prescribed inhalers.</p>
+    </div>
+
+    <div class="condition">
+      <img src="skin.jpg" alt="Skin Diseases">
+      <h2>Skin Diseases</h2>
+      <p>Caused by infections or allergies. Maintain skin hygiene and stay hydrated.</p>
+    </div>
+
+    <div class="condition">
+      <img src="Pneumonia.jpg" alt="Pneumonia">
+      <h2>Pneumonia</h2>
+      <p>Lung infection causing cough and fever. Timely treatment is essential.</p>
+    </div>
+
+    <div class="condition">
+      <img src="Thyroid.jpg" alt="Thyroid">
+      <h2>Thyroid</h2>
+      <p>Hormone imbalance affecting metabolism. Regular checkups are key.</p>
+    </div>
+
+    <div class="condition">
+      <img src="Lung Disease.jpg" alt="Lung Disease">
+      <h2>Lung Disease</h2>
+      <p>Reduces oxygen intake. Avoid smoking and air pollution.</p>
+    </div>
+
+    <div class="condition">
+      <img src="Kidney Disease.jpg" alt="Kidney Disease">
+      <h2>Kidney Disease</h2>
+      <p>Impacts blood filtration. Stay hydrated and reduce salt intake.</p>
+    </div>
+
+    <!-- 6 More Added -->
+    <div class="condition">
+      <img src="Arthritis.jpg" alt="Arthritis">
+      <h2>Arthritis</h2>
+      <p>Joint inflammation causing pain and stiffness. Regular exercise helps manage symptoms.</p>
+    </div>
+
+    <div class="condition">
+      <img src="Obesity.jpg" alt="Obesity">
+      <h2>Obesity</h2>
+      <p>Excess body fat increases risk of heart and joint issues. Maintain balanced nutrition.</p>
+    </div>
+
+    <div class="condition">
+      <img src="Pregnancy Care.jpg" alt="Pregnancy Care">
+      <h2>Pregnancy Care</h2>
+      <p>Healthy pregnancy requires proper diet, hydration, and medical checkups.</p>
+    </div>
+
+    <div class="condition">
+      <img src="Eye Disorders.jpg" alt="Eye Disorders">
+      <h2>Eye Disorders</h2>
+      <p>Includes vision loss and cataracts. Protect eyes from screens and UV light.</p>
+    </div>
+
+    <div class="condition">
+      <img src="Neurological Disorders.jpg" alt="Neurological Disorders">
+      <h2>Neurological Disorders</h2>
+      <p>Affect brain and nerves. Early diagnosis aids better management.</p>
+    </div>
+
+    <div class="condition">
+      <img src="Immunization" alt="Immunization">
+      <h2>Immunization</h2>
+      <p>Protects from infections through vaccines. Essential for lifelong health.</p>
+    </div>
+  </section>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stackly Footer with Map</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+    <footer>
+    <div class="footer-overlay"></div>
+    <script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+  
+</script>
+
+
+    .footer {
+      background: url('footer.jpg') no-repeat center bottom;
+      padding: 40px 10% 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .footer-column {
+      flex: 1 1 200px;
+      margin: 20px;
+    }
+
+    .footer-column h3 {
+      border-bottom: 2px solid #00ffff;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li {
+      margin: 10px 0;
+    }
+
+    .footer-column ul li a {
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    .footer-column ul li a:hover {
+      color: #fff;
+    }
+
+    .footer-contact p {
+      margin: 6px 0;
+    }
+
+    .map {
+      flex: 1 1 300px;
+      margin: 20px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 200px;
+      border: none;
+      border-radius: 6px;
+    }
+
+    .social-icons {
+      text-align: center;
+      padding: 20px 0 10px;
+    }
+
+    .social-icons a {
+      color: #fff;
+      margin: 0 10px;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    .copyright {
+      text-align: center;
+      color: #aaa;
+      font-size: 14px;
+      padding-bottom: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .footer {
+        flex-direction: column;
+        padding: 30px 5%;
+      }
+
+      .map {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+ <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="logo.jpg" alt="Stackly Logo">
+        <h3>STACKLY</h3>
+            </div>
+        
+
+      <div class="footer-links">
+        <h4>check us</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="healthyliving.html">living healthy</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">login</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Get In Touch</h4>
+        <p>MMR COMPLEX, Salem, Tamil Nadu 636008</p>
+        <p>+91 70107 92745</p>
+        <p>info@thestackly.com</p>
+      </div>
+      <!-- Social Icons -->
+  <div class="social-icons">
+    <a href="404.html"><i class="fab fa-facebook-f"></i></a>
+    <a href="404.html"><i class="fab fa-twitter"></i></a>
+    <a href="404.html"><i class="fab fa-linkedin-in"></i></a>
+    <a href="404.html"><i class="fab fa-instagram"></i></a>
+  </div>
+      <iframe
+          src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
+          width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+    </div>
+    <div class="copyright">
+      <p>© 2025 Stackly | All Rights Reserved</p>
+    </div>
+
+  </footer>
