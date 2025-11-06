@@ -13,6 +13,10 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%}
 
+body {
+  padding-top: 100px; /* match your header height */
+}
+
 body{
   font-family: "Inter", Poppins, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
   background: linear-gradient(180deg, var(--bg) 0%, #effffcf0 100%);
@@ -21,6 +25,53 @@ body{
   -moz-osx-font-smoothing:grayscale;
   line-height:1.45;
 }
+.living-healthy {
+  text-align: center;
+  padding: 100px 20px;
+  background-color: #f6fffaf0;
+}
+
+.living-healthy h2 {
+  font-size: 2rem;
+  color: #0b3d3a;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.living-healthy p {
+  font-size: 1.1rem;
+  color: #222;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* 📱 Responsive for Mobile Screens */
+@media (max-width: 768px) {
+  .living-healthy {
+    padding: 60px 15px;
+  }
+
+  .living-healthy h2 {
+    font-size: 1.6rem;
+  }
+
+  .living-healthy p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .living-healthy h2 {
+    font-size: 1.4rem;
+  }
+
+  .living-healthy p {
+    font-size: 0.95rem;
+  }
+}
+
 /* Header container */
 header {
   display: flex;
