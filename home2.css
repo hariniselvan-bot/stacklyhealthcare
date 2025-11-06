@@ -444,7 +444,7 @@ nav ul li a.active {
 
 /* HERO */
 .hero {
-  background: linear-gradient(180deg, #dff7f6, #0c0c0c);
+  background: linear-gradient(180deg, #dff7f6, #efe9e9);
   text-align: center;
   padding: 100px 20px;
 }
@@ -479,7 +479,7 @@ nav ul li a.active {
   padding: 10px 16px;
   background-color: var(--teal);
   border: none;
-  color: #100f0f;
+  color: #d5c6c6;
   border-radius: 6px;
   cursor: pointer;
 }
